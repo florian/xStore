@@ -1,0 +1,1 @@
+# lostorage.js–client-side storage the way it should be
