@@ -4,7 +4,7 @@ lostorage.js uses the HTML5 `localStorage` and `sessionStorage` APIs to provide 
 targeted at web apps.
 It has a [cookie.js](https://github.com/js-coder/cookie.js) like interface. Some facts:
 
-- The minified version is 1.5 KiB large, just 0.8 KiB if minified and gzipped.
+- The minified version is 2.0 KiB large, 0.87 KB if minified and gzipped.
 - It has no dependencies.
 - You can store any kind of data with lostorage.js: Booleans, numbers, strings, arrays and plain objects. With the
 usual `localStorage` you can just read strings.
