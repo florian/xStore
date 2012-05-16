@@ -164,7 +164,7 @@
 
    };
 
-   var methods = 'set invert add concat push extend remove empty get all'.split(' '); // Methods of _storage that need to be copied to storage and session.
+   var methods = 'set invert add increase decrease concat push extend remove empty get all'.split(' '); // Methods of _storage that need to be copied to storage and session.
    
    var types = {
       storage: localStorage,
