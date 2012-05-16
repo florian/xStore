@@ -1,10 +1,10 @@
 # lostorage.js–client-side storage the way it should be
 
-lostorage.js uses the HTML5 `localStorage` and `sessionStorage` APIs to provide a persistant client-side storage, 
-it has a [cookie.js](https://github.com/js-coder/cookie.js) like interface. Some facts:
+lostorage.js uses the HTML5 `localStorage` and `sessionStorage` APIs to provide a persistant client-side storage, mainly
+targeted at web apps.
+It has a [cookie.js](https://github.com/js-coder/cookie.js) like interface. Some facts:
 
 - The minified version is 1.5 KiB large, just 0.8 KiB if minified and gzipped.
-- lostorage.js is released under the [MIT/X11](https://github.com/js-coder/lostorage.js/blob/master/license) license.
 - It has no dependencies.
 - You can store any kind of data with lostorage.js: Booleans, numbers, strings, arrays and plain objects. With the
 usual `localStorage` you can just read strings.
