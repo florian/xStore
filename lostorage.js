@@ -1,4 +1,4 @@
-(function (window, undefined) {
+!function (window, undefined) {
 
    if (typeof JSON === 'undefined' || !('parse' in JSON) || !('stringify' in JSON)) throw 'Please include json2.js to get storage.js working.';
 
@@ -81,6 +81,14 @@
 
    _storage.add = function (type, key, value) {
       return this.set(type, key, this.get(type, key) + parseInt(value, 10));
+   };
+   
+   _storage.increase = function (type, key, value) {
+      return this.add(type, key, 1);
+   };
+   
+   _storage.decrease = function (type, key, value) {
+      return this.add(type, key, -1);
    };
 
    _storage.concat = function (type, key, string) { // append?
@@ -184,4 +192,4 @@
 
    }
 
-}(window));
+}(window);
