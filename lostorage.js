@@ -1,9 +1,7 @@
 // Copyright (c) 2012 Florian H., https://github.com/js-coder https://github.com/js-coder/lostorage.js
 
 !function (window, undefined) {
-
-   if (typeof JSON === 'undefined' || !('parse' in JSON) || !('stringify' in JSON)) throw 'Please include json2.js to get storage.js working.';
-
+   
    var utils = {
       
       isArray: Array.isArray || function (value) { // Checks if `value` is an array created with `[]` or `new Array`.
