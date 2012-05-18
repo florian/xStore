@@ -144,16 +144,17 @@
    };
 
    _storage.get = function (type, keys, fallback) {
-      
       fallback = fallback || undefined;
 
       if (utils.isArray(keys)) {
+         var result = {};
 
          for (var i = 0, l = keys.length; i < l; i++) {
             var key = keys[i];
-            result[key] = this.get(key, fallback);
+            result[key] = this.get(type, key, fallback);
          }
 
+         return result;
       } else return utils.retrieve(utils.unserialize(type.getItem(keys)), fallback);
 
    };
