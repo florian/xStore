@@ -69,7 +69,7 @@
             if (key.hasOwnProperty(k)) type.set(k, key[k]);
          }
 
-      } else type[key] = utils.serialize(value);
+      } else type.setItem(key, utils.serialize(value));
 
       return utils.prepareReturn(type); // to enable chaining
 
@@ -154,7 +154,7 @@
             result[key] = this.get(key, fallback);
          }
 
-      } else return utils.retrieve(utils.unserialize(type[keys]), fallback); 
+      } else return utils.retrieve(utils.unserialize(type.getItem(keys)), fallback);
 
    };
 
