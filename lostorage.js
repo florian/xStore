@@ -1,17 +1,17 @@
 // Copyright (c) 2012 Florian H., https://github.com/js-coder https://github.com/js-coder/lostorage.js
 
 !function (window, undefined) {
-   
+
    var utils = {
-      
+
       isArray: Array.isArray || function (value) { // Checks if `value` is an array created with `[]` or `new Array`.
          return Object.prototype.toString.call(value) === '[object Array]';
       },
-         
+
       isPlainObj: function (value) { // Checks if `value` is an object that was created with `{}` or `new Object`.
          return value === Object(value);
       },
-         
+
       toArray: function (value) { // Converts an array-like object to an array - for example `arguments`.
          return Array.prototype.slice.call(value);
       },
@@ -62,7 +62,7 @@
    };
 
    _storage.set = function (type, key, value) {
-      
+
       if (utils.isPlainObj(key)) {
 
          for (var k in key) {
@@ -76,34 +76,34 @@
    };
 
    _storage.invert = function (type, key) {
-      return type.set(key, !(this.get(key)));
+      return this.set(type, key, !(this.get(type, key)));
    };
 
    _storage.add = function (type, key, value) {
       return this.set(type, key, this.get(type, key) + parseInt(value, 10));
    };
-   
+
    _storage.increase = function (type, key, value) {
       return this.add(type, key, 1);
    };
-   
+
    _storage.decrease = function (type, key, value) {
       return this.add(type, key, -1);
    };
 
    _storage.concat = function (type, key, string) { // append?
-      return this.set(key, this.get(key) + string);
+      return this.set(type, key, this.get(type, key) + string);
    };
 
    _storage.push = function (type, key, value) {
-      
+
       var args = utils.toArray(arguments),
-           arr = this.get(key);
-      
-      args.shift();
+           arr = this.get(type, key);
+
+      args.splice(0, 2);
       arr.push.apply(arr, args);
 
-      return this.set(key, arr);
+      return this.set(type, key, arr);
 
    }
 
@@ -160,13 +160,13 @@
    };
 
    _storage.all = function (type) {
-      
+
       return JSON.parse(JSON.stringify(type)); // Yep, I know this is insanely unelegant. But it seems to be the fastest way to remove the localStorage / sessionStorage methods and copy the other values. Also it makes the file size smaller, because I don't have to include an Object.clone polyfill.
 
    };
 
    var methods = 'set invert add increase decrease concat push extend remove empty get all'.split(' '); // Methods of _storage that need to be copied to storage and session.
-   
+
    var types = {
       storage: localStorage,
       session: sessionStorage
