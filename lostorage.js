@@ -109,7 +109,7 @@
 
    _storage.extend = function (type, key, k, v) { // variables?
 
-      var value = this.get(key, {});
+      var value = this.get(type, key, {});
 
       if (utils.isPlainObj(k)) {
 
@@ -119,7 +119,7 @@
 
       } else value[k] = v;
 
-      return this.set(key, value);
+      return this.set(type, key, value);
 
    };
 
