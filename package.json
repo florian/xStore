@@ -1,0 +1,12 @@
+{
+	"name": "TODO",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"test": "grunt test"
+	},
+	"devDependencies": {
+		"grunt": "~0.3",
+		"grunt-jasmine-task": "~0.2"
+	}
+}
