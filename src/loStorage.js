@@ -86,11 +86,11 @@
    };
 
    _storage.increase = function (type, key, value) {
-      return this.add(type, key, 1);
+      return this.add(type, key, utils.retrieve(value, 1));
    };
 
    _storage.decrease = function (type, key, value) {
-      return this.add(type, key, -1);
+      return this.add(type, key, -utils.retrieve(value, 1));
    };
 
    _storage.concat = function (type, key, string) { // append?
