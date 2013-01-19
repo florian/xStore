@@ -54,12 +54,13 @@
          return _storage.get.apply(this, arguments);
    };
 
-   window.storage = function () {
-      return storage.get.apply(storage, arguments);
-   };
-
-   window.session = function () {
-      return session.get.apply(session, arguments);
+   var host = {
+      storage: function () {
+         return storage.get.apply(storage, arguments);
+      },
+      session: function () {
+         return session.get.apply(session, arguments);
+      }
    };
 
    _storage.set = function (type, key, value) {
@@ -183,7 +184,7 @@
 
          var storeType = types[name];
 
-         window[name][method] = function (method, storeType) {
+         host[name][method] = function (method, storeType) {
             return function () {
                var args = utils.prepareArgs(arguments, storeType);
                return _storage[method].apply(_storage, args);
@@ -192,6 +193,24 @@
 
       }
 
+   }
+
+   // loStorage object for AMD & CommonJS.
+   var loStorage = {
+      storage: host.storage,
+      session: host.session
+   };
+
+   // AMD, CommonJS or global.
+   if (typeof define === 'function' && define.amd) {
+      define(function () {
+         return loStorage;
+      });
+   } else if (typeof exports !== 'undefined') {
+      module.exports = loStorage;
+   } else {
+      window.storage = host.storage;
+      window.session = host.session;
    }
 
 }(window);
