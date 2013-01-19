@@ -19,7 +19,7 @@ module.exports = function (grunt) {
 
 		watch: {
 			test: {
-				files: ['spec/*'],
+				files: ['src/loStorage.js', 'spec/*'],
 				tasks: 'test'
 			}
 		}
