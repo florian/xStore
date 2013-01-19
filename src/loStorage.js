@@ -68,7 +68,7 @@
       if (utils.isPlainObj(key)) {
 
          for (var k in key) {
-            if (key.hasOwnProperty(k)) type.set(k, key[k]);
+            if (key.hasOwnProperty(k)) type.setItem(k, utils.serialize(key[k]));
          }
 
       } else type.setItem(key, utils.serialize(value));
