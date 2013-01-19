@@ -4,25 +4,26 @@
 
    var utils = {
 
-      isArray: Array.isArray || function (value) { // Checks if `value` is an array created with `[]` or `new Array`.
+      isArray: Array.isArray || function (value) {
          return Object.prototype.toString.call(value) === '[object Array]';
       },
 
-      isPlainObj: function (value) { // Checks if `value` is an object that was created with `{}` or `new Object`.
+      isPlainObj: function (value) {
          return value === Object(value);
       },
 
-      toArray: function (value) { // Converts an array-like object to an array - for example `arguments`.
+      toArray: function (value) {
          return Array.prototype.slice.call(value);
       },
 
-      prepareArgs: function (args, element) { // Convert arguments to an Array (`utils.toArray`) and prepend `element`.
+      // Convert arguments to an Array (`utils.toArray`) and prepend `element`.
+      prepareArgs: function (args, element) {
          args = utils.toArray(args);
          args.unshift(element);
          return args;
       },
 
-      getObjKeyByValue: function (obj, value) { // Get object key by value.
+      getObjKeyByValue: function (obj, value) {
          for (var key in obj) {
             if (obj.hasOwnProperty(key)) {
                if (obj[key] === value) return key;
@@ -30,11 +31,12 @@
          }
       },
 
-      prepareReturn: function (type) { // Prepares the return value to enable chaining.
+      // Prepares the return value to enable chaining.
+      prepareReturn: function (type) {
          return window[utils.getObjKeyByValue(types, type)];
       },
 
-      retrieve: function (value, fallback) { // Returns fallback if the value is undefined, otherwise value.
+      retrieve: function (value, fallback) {
          return value === undefined ? fallback : value;
       },
 
