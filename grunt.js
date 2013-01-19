@@ -21,6 +21,11 @@ module.exports = function (grunt) {
 			test: {
 				files: ['src/loStorage.js', 'spec/*'],
 				tasks: 'test'
+			},
+
+			min: {
+				files: ['src/loStorage.js'],
+				tasks: 'min'
 			}
 		}
 
