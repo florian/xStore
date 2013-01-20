@@ -6,6 +6,7 @@ This is a maintenance release, with a completely `1.0.x` compatible API. This is
 
 - loStorage.js is now very well unit tested.
 - `storage.increase` / `session.increase` now works like `.add` with a default value of 1. `storage.add` will be removed in `1.2.0`.
+- `storage.push` creates an array and pushes if it doesn't exist yet.
 
 ## 1.0.3 / 2013-01-20
 
