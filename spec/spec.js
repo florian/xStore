@@ -119,6 +119,17 @@ describe('storage', function () {
 			expect('b' in localStorage).toBe(false);
 		});
 	});
+
+	describe('empty', function () {
+		it('should remove all values', function () {
+			storage.set('a', 1).set('b', 2).empty();
+			expect(localStorage.length).toBe(0);
+		});
+
+		it('should return the parent object', function () {
+			expect(storage.empty()).toBe(storage);
+		});
+	});
 });
 
 describe('session', function () {
