@@ -69,7 +69,7 @@ describe('storage', function () {
 		});
 
 		it('should return the storage object', function () {
-			expect(storage.set('a', 'b')).toEqual(storage);
+			expect(storage.set('a', 'b')).toBe(storage);
 		});
 	});
 
