@@ -94,6 +94,13 @@ describe('storage', function () {
 		});
 	});
 
+	describe('all', function () {
+		it('should return all available values as an object', function () {
+			storage.set('a', 1).set('b', 2);
+			expect(storage.all()).toEqual({a: 1, b: 2});
+		});
+	});
+
 	describe('remove', function () {
 		it('should be able to remove a single key', function () {
 			storage.set('a', 1).remove('a');
