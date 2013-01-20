@@ -35,8 +35,8 @@
          return window[utils.getObjKeyByValue(types, type)];
       },
 
-      retrieve: function (value, fallback) {
-         return value === undefined ? fallback : value;
+      retrieve: function (value, fallback) { // Returns fallback if the value is undefined, otherwise value.
+         return value == undefined ? fallback : value;
       },
 
       serialize: function (data) {
@@ -44,7 +44,7 @@
       },
 
       unserialize: function (data) {
-         if (data === undefined) return undefined;
+         if (data == undefined) return undefined;
          return JSON.parse(data);
       }
 
