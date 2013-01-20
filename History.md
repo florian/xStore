@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.0 / 2013-01-2x
+## 1.1.0 / 2013-01-20
 
 This is a maintenance release, with a completely `1.0.x` compatible API. This is meant to be a stable base for later versions.
 
