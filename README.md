@@ -1,5 +1,4 @@
-# loStorage.js–client-side storage the way it should be [![Build Status](https://travis-ci.org/js-coder/loStorage.js.png)](undefined)
-
+# loStorage.js–client-side storage the way it should be [![Build Status](https://travis-ci.org/js-coder/loStorage.js.png?branch=master)](https://travis-ci.org/js-coder/loStorage.js)
 loStorage.js uses the HTML5 `localStorage` and `sessionStorage` APIs to provide a persistant client-side storage, mainly
 targeted at web apps.
 It has a [cookie.js](https://github.com/js-coder/cookie.js) like interface. Some facts:
