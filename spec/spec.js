@@ -238,4 +238,9 @@ describe('session', function () {
 	it('should be in the global scope', function () {
 		expect(session).toBeDefined();
 	});
+
+	it('should be operating with sessionStorage', function () {
+		session.set('a', 'b');
+		expect(parse(sessionStorage.getItem('a'))).toBe('b');
+	});
 });
