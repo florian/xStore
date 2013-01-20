@@ -93,6 +93,25 @@ describe('storage', function () {
 			expect(storage.get(['a', 'b'], 42)).toEqual({a: 1, b: 42});
 		});
 	});
+
+	describe('remove', function () {
+		it('should be able to remove a single key', function () {
+			storage.set('a', 1).remove('a');
+			expect('a' in localStorage).toBe(false);
+		});
+
+		it('should be able to remove several keys', function () {
+			storage.set('a', 1).set('b', 2).remove('a', 'b');
+			expect('a' in localStorage).toBe(false);
+			expect('b' in localStorage).toBe(false);
+		});
+
+		it('should be able to remove several keys in an array', function () {
+			storage.set('a', 1).set('b', 2).remove(['a', 'b']);
+			expect('a' in localStorage).toBe(false);
+			expect('b' in localStorage).toBe(false);
+		});
+	});
 });
 
 describe('session', function () {
