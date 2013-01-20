@@ -194,7 +194,23 @@ describe('storage', function () {
 		it('should return the parent object', function () {
 			expect(storage.concat('key', 'str')).toBe(storage);
 		});
-	})
+	});
+
+	describe('push', function () {
+		it('should push the value', function () {
+			storage.set('arr', [1, 2]).push('arr', 3, 4);
+			expect('arr').toHaveLocalValue([1, 2, 3, 4]);
+		});
+
+		it("should create the array and push if it doesn't exist", function () {
+			storage.push('list', 1, 2);
+			expect('list').toHaveLocalValue([1, 2]);
+		});
+
+		it('should return the parent object', function () {
+			expect(storage.push('key', 1)).toBe(storage);
+		});
+	});
 });
 
 describe('session', function () {
