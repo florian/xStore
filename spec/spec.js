@@ -152,6 +152,22 @@ describe('storage', function () {
 			expect(storage.add('key', 5)).toBe(storage);
 		});
 	});
+
+	describe('increase', function () {
+		it('should increase the value by 1', function () {
+			storage.set('n', 40).increase('n');
+			expect('n').toHaveLocalValue(41);
+		});
+
+		it('should accept a value to increase by', function () {
+			storage.set('n', 40).increase('n', 2);
+			expect('n').toHaveLocalValue(42);
+		});
+
+		it('should return the parent object', function () {
+			expect(storage.increase('key', 5)).toBe(storage);
+		});
+	});
 });
 
 describe('session', function () {
