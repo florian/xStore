@@ -141,6 +141,17 @@ describe('storage', function () {
 			expect(storage.invert('key')).toBe(storage);
 		});
 	});
+
+	describe('add', function () {
+		it('should add to the value', function () {
+			storage.set('n', 40).add('n', 2);
+			expect('n').toHaveLocalValue(42);
+		});
+
+		it('should return the parent object', function () {
+			expect(storage.add('key', 5)).toBe(storage);
+		});
+	});
 });
 
 describe('session', function () {
