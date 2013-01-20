@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "scripts": [
-    "lib/loStorage.js"
+    "src/loStorage.js"
   ],
-  "main": "lib/loStorage.js"
+  "main": "src/loStorage.js"
 }
