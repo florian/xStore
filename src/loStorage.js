@@ -100,7 +100,7 @@
    _storage.push = function (type, key, value) {
 
       var args = utils.toArray(arguments),
-           arr = this.get(type, key) || [];
+           arr = this.get(type, key, []);
 
       args.splice(0, 2);
       arr.push.apply(arr, args);
