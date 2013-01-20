@@ -184,6 +184,17 @@ describe('storage', function () {
 			expect(storage.decrease('key', 5)).toBe(storage);
 		});
 	});
+
+	describe('concat', function () {
+		it('should concat the value', function () {
+			storage.set('str', 'Hello').concat('str', ' World');
+			expect('str').toHaveLocalValue('Hello World');
+		});
+
+		it('should return the parent object', function () {
+			expect(storage.concat('key', 'str')).toBe(storage);
+		});
+	})
 });
 
 describe('session', function () {
