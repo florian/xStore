@@ -168,6 +168,22 @@ describe('storage', function () {
 			expect(storage.increase('key', 5)).toBe(storage);
 		});
 	});
+
+	describe('decrease', function () {
+		it('should decrease the value by 1', function () {
+			storage.set('n', 40).decrease('n');
+			expect('n').toHaveLocalValue(39);
+		});
+
+		it('should accept a value to decrease by', function () {
+			storage.set('n', 40).decrease('n', 2);
+			expect('n').toHaveLocalValue(38);
+		});
+
+		it('should return the parent object', function () {
+			expect(storage.decrease('key', 5)).toBe(storage);
+		});
+	});
 });
 
 describe('session', function () {
