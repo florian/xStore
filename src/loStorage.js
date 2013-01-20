@@ -146,6 +146,7 @@
    };
 
    _storage.get = function (type, keys, fallback) {
+
       fallback = fallback || undefined;
 
       if (utils.isArray(keys)) {
@@ -163,8 +164,14 @@
 
    _storage.all = function (type) {
 
-      return JSON.parse(JSON.stringify(type)); // Yep, I know this is insanely unelegant. But it seems to be the fastest way to remove the localStorage / sessionStorage methods and copy the other values. Also it makes the file size smaller, because I don't have to include an Object.clone polyfill.
+      var obj = {};
 
+      for (var i = 0, l = type.length; i < l; i++) {
+         var key = type.key(i);
+         obj[key] = utils.unserialize(type.getItem(key));
+      }
+
+      return obj;
    };
 
    var methods = 'set invert add increase decrease concat push extend remove empty get all'.split(' '); // Methods of _storage that need to be copied to storage and session.
