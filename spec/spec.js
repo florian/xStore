@@ -211,6 +211,27 @@ describe('storage', function () {
 			expect(storage.push('key', 1)).toBe(storage);
 		});
 	});
+
+	describe('extend', function () {
+		it('should extend the object with the key and value', function () {
+			storage.set('obj', {a: 1}).extend('obj', 'b', 2);
+			expect('obj').toHaveLocalValue({a: 1, b: 2});
+		});
+
+		it('should be able to extend with an object', function () {
+			storage.set('obj', {a: 1}).extend('obj', {b: 2});
+			expect('obj').toHaveLocalValue({a: 1, b: 2});
+		});
+
+		it("should create the object if it doesn't exist yet", function () {
+			storage.extend('obj', {a: 1});
+			expect('obj').toHaveLocalValue({a: 1});
+		});
+
+		it('should return the parent object', function () {
+			expect(storage.extend('key', 'a', 1)).toBe(storage);
+		});
+	});
 });
 
 describe('session', function () {
