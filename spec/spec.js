@@ -130,6 +130,17 @@ describe('storage', function () {
 			expect(storage.empty()).toBe(storage);
 		});
 	});
+
+	describe('invert', function () {
+		it('should invert the value', function () {
+			storage.set('bool', true).invert('bool');
+			expect('bool').toHaveLocalValue(false);
+		});
+
+		it('should return the parent object', function () {
+			expect(storage.invert('key')).toBe(storage);
+		});
+	});
 });
 
 describe('session', function () {
