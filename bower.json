@@ -1,0 +1,21 @@
+{
+  name: 'lostorage',
+  version: '1.1.0',
+  authors: [
+    'Florian H (https://github.com/js-coder)'
+  ],
+  description: 'loStorage.js: Client-side storage the way it should be',
+  main: 'src/loStorage.js',
+  keywords: [
+    'storage',
+    'localStorage',
+    'sessionStorage'
+  ],
+  license: 'MIT',
+  homepage: 'https://github.com/js-coder/lostorage.js',
+  ignore: [
+    'node_modules',
+    'bower_components',
+    'spec'
+  ]
+}
