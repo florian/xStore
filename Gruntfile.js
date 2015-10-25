@@ -14,7 +14,11 @@ module.exports = function (grunt) {
 		},
 
 		jasmine: {
-			all: ['spec/index.html']
+			src: 'src/loStorage.js',
+			options: {
+				specs: 'spec/spec.js',
+				vendor: 'vendor/jasmine/lib/jasmine-core/jasmine.js'
+			}
 		},
 
 		watch: {
@@ -31,7 +35,7 @@ module.exports = function (grunt) {
 
 	});
 
-	grunt.loadNpmTasks('grunt-jasmine-task');
+	grunt.loadNpmTasks('grunt-contrib-jasmine');
 
 	grunt.registerTask('test', 'jasmine');
 	grunt.registerTask('release', 'test min');

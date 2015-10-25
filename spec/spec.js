@@ -4,14 +4,18 @@ describe('storage', function () {
 	beforeEach(function () {
 		storage.empty();
 
-		this.addMatchers({
-			toHaveLocalValue: function (expected) {
-				var actual = this.actual;
-				var notText = this.isNot ? ' not' : '';
-				this.message = function () {
-					return 'Expected ' + expected + notText + ' to be value of ' + actual;
-				}
-				return jasmine.getEnv().equals_(expected, parse(localStorage.getItem(actual)));
+		jasmine.addMatchers({
+			toHaveLocalValue: function (utils, customEqualityTesters) {
+				return {
+					compare: function (actual, expected) {
+						var notText = this.isNot ? ' not' : '';
+						var passed = utils.equals(expected, parse(localStorage.getItem(actual)));
+						return {
+							pass: passed,
+							message: 'Expected ' + expected + notText + ' to be value of ' + actual
+						};
+					}
+				};
 			}
 		});
 	});

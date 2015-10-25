@@ -8,33 +8,10 @@
   <link rel="stylesheet" type="text/css" href="vendor/jasmine/lib/jasmine-core/jasmine.css">
   <script type="text/javascript" src="vendor/jasmine/lib/jasmine-core/jasmine.js"></script>
   <script type="text/javascript" src="vendor/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+  <script type="text/javascript" src="vendor/jasmine/lib/jasmine-core/boot.js"></script>
 
   <script src="../src/loStorage.js"></script>
   <script src="spec.js"></script>
-
-  <script type="text/javascript">
-    (function() {
-      var jasmineEnv = jasmine.getEnv();
-      jasmineEnv.updateInterval = 1000;
-
-      var trivialReporter = new jasmine.TrivialReporter();
-
-      jasmineEnv.addReporter(trivialReporter);
-
-      jasmineEnv.specFilter = function(spec) {
-        return trivialReporter.specFilter(spec);
-      };
-
-      var currentWindowOnload = window.onload;
-
-      window.onload = function() {
-        if (currentWindowOnload) {
-          currentWindowOnload();
-        }
-        jasmineEnv.execute();
-      };
-    })();
-  </script>
 
 </head>
 
