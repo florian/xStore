@@ -35,7 +35,8 @@
          return window[utils.getObjKeyByValue(types, type)];
       },
 
-      retrieve: function (value, fallback) { // Returns fallback if the value is undefined, otherwise value.
+      // Returns fallback if the value is undefined, otherwise value.
+      retrieve: function (value, fallback) {
          return value == null ? fallback : value;
       },
 
