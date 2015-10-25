@@ -1,6 +1,6 @@
 {
   "name": "loStorage.js",
-  "repo": "js-coder/loStorage.js",
+  "repo": "florian/loStorage.js",
   "description": "Client-side storage the way it should be – using the HTML5 localStorage API.",
   "version": "1.1.0",
   "keywords": [
