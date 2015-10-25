@@ -32,12 +32,12 @@ storage.get('counter'); 2
 ## WTF? Another micro library for client-side storage?
 
 Yep, there are already some similar libraries out there, but I decided to write my own one because none didn't
-really fit my needs. loStorage.js only supports browers that are [somewhat modern](https://github.com/florian/loStorage.js/wiki/Browser-support).
+really fit my needs. loStorage.js only supports browers that are [somewhat modern](https://github.com/florian/loStorage.js/blob/master/docs/browser-support.md).
 Furthermore it has an interface that makes working with client-side storage a breeze.
 
 ## Getting started
 
 Read these wiki entries:
 
-- [Getting started](https://github.com/florian/loStorage.js/wiki/Getting-started)
-- [Documentation](https://github.com/florian/loStorage.js/wiki/Documentation)
+- [Getting started](https://github.com/florian/loStorage.js/blob/master/docs/getting-started.md)
+- [Documentation](https://github.com/florian/loStorage.js/blob/master/docs/api-documentation.md)
