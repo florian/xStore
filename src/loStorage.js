@@ -1,4 +1,4 @@
-// Copyright (c) 2012 Florian H., https://github.com/js-coder https://github.com/js-coder/lostorage.js
+// Copyright (c) 2012 Florian H., https://github.com/florian https://github.com/florian/lostorage.js
 !function (window, undefined) {
 
    var utils = {

@@ -2,14 +2,15 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 
-		meta: {
-			banner: '// ' + grunt.file.read('src/loStorage.js').split("\n")[0]
-		},
+		uglify: {
+			options: {
+				banner: grunt.file.read('src/loStorage.js').split('\n')[0] + "\n"
+			},
 
-		min: {
-			dist: {
-				src: ['<banner>', 'src/loStorage.js'],
-				dest: 'src/loStorage.min.js'
+			my_target: {
+				files: {
+					'src/loStorage.min.js': ['src/loStorage.js']
+				}
 			}
 		},
 
@@ -36,9 +37,11 @@ module.exports = function (grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
+	grunt.registerTask('min', 'uglify');
 	grunt.registerTask('test', 'jasmine');
-	grunt.registerTask('release', 'test min');
+	grunt.registerTask('release', ['test', 'min']);
 	grunt.registerTask('default', 'release');
 
 };
