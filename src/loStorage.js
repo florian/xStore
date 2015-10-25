@@ -36,7 +36,7 @@
       },
 
       retrieve: function (value, fallback) { // Returns fallback if the value is undefined, otherwise value.
-         return value == undefined ? fallback : value;
+         return value == null ? fallback : value;
       },
 
       serialize: function (data) {
@@ -44,7 +44,7 @@
       },
 
       unserialize: function (data) {
-         if (data == undefined) return undefined;
+         if (data == null) return undefined;
          return JSON.parse(data);
       }
 
@@ -107,7 +107,7 @@
 
       return this.set(type, key, arr);
 
-   }
+   };
 
    _storage.extend = function (type, key, k, v) { // variables?
 

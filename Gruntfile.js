@@ -2,6 +2,21 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 
+		jshint: {
+			all: ['Gruntfile.js', 'src/loStorage.js', 'spec/spec.js'],
+			options: {
+				browser: true,
+				evil: false,
+				expr: true,
+				supernew: true,
+				eqeqeq: true,
+				eqnull: true,
+				forin: true,
+				smarttabs: true,
+				loopfunc: true
+			}
+		},
+
 		uglify: {
 			options: {
 				banner: grunt.file.read('src/loStorage.js').split('\n')[0] + "\n"
@@ -39,9 +54,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 
 	grunt.registerTask('min', 'uglify');
-	grunt.registerTask('test', 'jasmine');
+	grunt.registerTask('test', ['jshint', 'jasmine']);
 	grunt.registerTask('release', ['test', 'min']);
 	grunt.registerTask('default', 'release');
 

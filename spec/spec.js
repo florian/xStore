@@ -27,7 +27,7 @@ describe('storage', function () {
 	describe('set', function () {
 		it('should be able to set a single value', function () {
 			storage.set('a', 'b');
-			expect('a').toHaveLocalValue('b')
+			expect('a').toHaveLocalValue('b');
 		});
 
 		it('should be able to set multiple values', function () {
@@ -46,7 +46,7 @@ describe('storage', function () {
 				b: false
 			});
 
-			expect('a').toHaveLocalValue(true)
+			expect('a').toHaveLocalValue(true);
 			expect('b').toHaveLocalValue(false);
 		});
 
