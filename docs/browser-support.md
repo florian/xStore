@@ -1,6 +1,6 @@
 # Browser support
 
-loStorage.js works in every browser that supports [web storage](http://caniuse.com/namevalue-storage) 
+xStore works in every browser that supports [web storage](http://caniuse.com/namevalue-storage)
 and [parsing JSON / serializing to JSON](http://caniuse.com/json). That's pretty much every browser you might want to support except IE6 and 7:
 
 - Internet Explorer 8+
@@ -9,7 +9,7 @@ and [parsing JSON / serializing to JSON](http://caniuse.com/json). That's pretty
 - Safari 4+
 - Opera 10.5+
 
-That's a browser share of ~85%. Since loSstorage.js targets web apps, that usually don't have to work on 6 years old browsers, I've decided to keep the library small and not to support IE6/7 by default.
+That's a browser share of ~85%. Since xStore targets web apps, that usually don't have to work on 6 years old browsers, I've decided to keep the library small and not to support IE6/7 by default.
 
 ---
 
