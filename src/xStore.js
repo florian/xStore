@@ -167,7 +167,7 @@
   // AMD, CommonJS or global.
   if (typeof define === 'function' && define.amd) {
     define(function () {
-      return xStore;
+      return { xStore: xStore };
     });
   } else if (typeof exports !== 'undefined') {
     module.exports = xStore;
