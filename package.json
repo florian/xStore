@@ -1,7 +1,6 @@
 {
-  "name": "loStorage.js",
+  "name": "xStore",
   "version": "2.0.0",
-  "private": true,
   "scripts": {
     "test": "grunt test"
   },

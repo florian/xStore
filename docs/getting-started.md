@@ -2,10 +2,10 @@
 
 ## NPM
 
-`npm install xstore`
+`npm install xStore`
 
 ```js
-var xStore = require('xstore')
+var xStore = require('xStore')
 ```
 
 ## Normal download
