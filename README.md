@@ -1,13 +1,15 @@
 # xStore–client-side storage the way it should be [![Build Status](https://travis-ci.org/florian/xStore.png?branch=master)](https://travis-ci.org/florian/xStore)
-xStore uses the HTML5 `localStorage` and `sessionStorage` APIs to provide a persistant client-side storage, mainly
-targeted at web apps.
-It has a [cookie.js](https://github.com/florian/cookie.js) like interface. Some facts:
+xStore wraps the HTML5 `localStorage` and `sessionStorage` APIs to provide client-side storage, mainly
+targeted at web apps. It allows you to create different data stores that serialize data for you.
 
-- The minified version is 2.0 KiB large, 0.8 KB if minified and gzipped.
-- It has no dependencies.
-- You can store any kind of data with xStore: Booleans, numbers, strings, arrays and plain objects. With the
-usual `localStorage` you can just read strings.
-- xStore supports chaining.
+In a nutshell:
+
+- It's small: 0.8 KB if minified and gzipped.
+- It has no dependencies
+- xStore serializes Booleans, numbers, strings, arrays and plain objects for you
+- Chaining support
+- It has a [cookie.js](https://github.com/florian/cookie.js) like interface.
+- You can choose if your storage should be persistent (`localStorage`) or just for a session (`sessionStorage`)
 
 ## Some example code
 
