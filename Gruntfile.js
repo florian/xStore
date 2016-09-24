@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 
 		jshint: {
-			all: ['Gruntfile.js', 'src/loStorage.js', 'spec/spec.js'],
+			all: ['Gruntfile.js', 'src/xStore.js', 'spec/spec.js'],
 			options: {
 				browser: true,
 				evil: false,
@@ -19,18 +19,18 @@ module.exports = function (grunt) {
 
 		uglify: {
 			options: {
-				banner: grunt.file.read('src/loStorage.js').split('\n')[0] + "\n"
+				banner: grunt.file.read('src/xStore.js').split('\n')[0] + "\n"
 			},
 
 			my_target: {
 				files: {
-					'src/loStorage.min.js': ['src/loStorage.js']
+					'src/xStore.min.js': ['src/xStore.js']
 				}
 			}
 		},
 
 		jasmine: {
-			src: 'src/loStorage.js',
+			src: 'src/xStore.js',
 			options: {
 				specs: 'spec/spec.js',
 				vendor: 'vendor/jasmine/lib/jasmine-core/jasmine.js'
@@ -39,12 +39,12 @@ module.exports = function (grunt) {
 
 		watch: {
 			test: {
-				files: ['src/loStorage.js', 'spec/*'],
+				files: ['src/xStore.js', 'spec/*'],
 				tasks: 'test'
 			},
 
 			min: {
-				files: ['src/loStorage.js'],
+				files: ['src/xStore.js'],
 				tasks: 'min'
 			}
 		}

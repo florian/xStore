@@ -1,7 +1,7 @@
 {
-  "name": "loStorage.js",
-  "description": "loStorage.js: Client-side storage the way it should be",
-  "main": "src/loStorage.js",
+  "name": "xStore",
+  "description": "Client-side storage the way it should be",
+  "main": "src/xStore.js",
   "authors": [
     "Florian Hartmann <jscoderr@gmail.com>"
   ],
@@ -11,7 +11,7 @@
     "localStorage",
     "sessionStorage"
   ],
-  "homepage": "https://github.com/florian/loStorage.js",
+  "homepage": "https://github.com/florian/xStore",
   "moduleType": [],
   "ignore": [
     "**/.*",
