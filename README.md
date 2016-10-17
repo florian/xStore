@@ -21,7 +21,7 @@ store.set({
 
 // Later
 
-store.push('list', 3, 4).increase(counter); // Chaining is awesome
+store.push('list', 3, 4).increase('counter'); // Chaining is awesome
 
 // And read the values:
 
