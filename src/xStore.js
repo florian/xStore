@@ -42,7 +42,7 @@
     unserialize: function (data) {
       if (data == null) return undefined;
       return JSON.parse(data);
-    }
+    },
 
   };
 
@@ -51,21 +51,28 @@
     this.store = store;
   };
 
+  xStore.prototype.addPrefix = function (key) {
+    return this.prefix + key;
+  };
+
+
   xStore.prototype.get = function (keys, fallback) {
 
     fallback = fallback || undefined;
+    var key;
 
     if (utils.isArray(keys)) {
       var result = {};
 
       for (var i = 0, l = keys.length; i < l; i++) {
-        var key = keys[i];
+        key = keys[i];
         result[key] = this.get(key, fallback);
       }
 
       return result;
     } else {
-      return utils.retrieve(utils.unserialize(this.store.getItem(keys)), fallback);
+      key = this.addPrefix(keys);
+      return utils.retrieve(utils.unserialize(this.store.getItem(key)), fallback);
     }
 
   };
@@ -79,7 +86,7 @@
       }
 
     } else {
-      key = this.prefix + key;
+      key = this.addPrefix(key);
       this.store.setItem(key, utils.serialize(value));
     }
 
@@ -158,7 +165,11 @@
 
     for (var i = 0, l = this.store.length; i < l; i++) {
       var key = this.store.key(i);
-      obj[key] = utils.unserialize(this.store.getItem(key));
+      if (key.indexOf(this.prefix) === 0) {
+        var value = utils.unserialize(this.store.getItem(key));
+        key = key.substring(this.prefix.length);
+        obj[key] = value;
+      }
     }
 
     return obj;
