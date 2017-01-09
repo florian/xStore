@@ -15,7 +15,7 @@ var session = new xStore("user:", sessionStorage);
 
 ### Prefix
 
-The prefix is used when saving keys. This allows seperate stores with different prefixes to save values under the same key.
+The prefix is used when saving keys. This allows separate stores with different prefixes to save values under the same key.
 
 ```js
 var user = new xStore("user:", localStorage);
@@ -61,12 +61,12 @@ store.set({
 
 ## store.get / session.get
 
-Use the `get` method, or its shortcut: `store.)` / `session()`, to retrieve values.
+Use the `get` method, or its shortcut: `store()` / `session()`, to retrieve values.
 
 ```javascript
 store.get('key'); // Or: session.get('key')
 // Are the same as
-store.'key'); // Or: session('key')
+store(key'); // Or: session('key')
 ```
 
 You can also add an fallback if the key doesn't exist or the value is `undefined`:
@@ -98,7 +98,7 @@ store.set('object', { a: 1, b: 2 }).get('object'); // {a: 1, b: 2}
 
 ## store.all / session.all
 
-Call `store.all` to get all data saved with the `store. object:
+Call `store.all` to get all data saved with the `store` object:
 ```javascript
 var store.ata = store.all();
 ```
@@ -115,7 +115,7 @@ store.remove(['key1', 'key2']);
 
 ## store.empty / session.empty
 
-This will remove all of the data that was saved with `store.:
+This will remove all of the data that was saved with `store`:
 
 ```javascript
 store.empty();
@@ -176,7 +176,7 @@ store.decrease('counter').get('counter'); // 9
 
 ## store.concat / session.concat
 
-This appends a string to a `store. / `session` value:
+This appends a string to a `store` / `session` value:
 
 ```javascript
 store.set('text', 'Hello');
