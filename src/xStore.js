@@ -147,7 +147,7 @@
     keys = utils.isArray(keys) ? keys : utils.toArray(arguments);
 
     for (var i = 0, l = keys.length; i < l; i++) {
-      delete this.store[keys[i]];
+      this.store.removeItem(keys[i]);
     }
 
     return this;
