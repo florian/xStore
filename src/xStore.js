@@ -147,7 +147,8 @@
     keys = utils.isArray(keys) ? keys : utils.toArray(arguments);
 
     for (var i = 0, l = keys.length; i < l; i++) {
-      this.store.removeItem(keys[i]);
+      var key = this.addPrefix(keys[i]);
+      this.store.removeItem(key);
     }
 
     return this;

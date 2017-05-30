@@ -131,6 +131,12 @@ describe('xStore localStorage', function () {
 			expect('a' in localStorage).toBe(false);
 			expect('b' in localStorage).toBe(false);
 		});
+
+		it('should be able to deal with prefixes', function () {
+		  var prefixStore = new xStore('prefix:', localStorage);
+		  prefixStore.set('a', 'b').remove('a');
+		  expect('prefix:a' in localStorage).toBe(false);
+		});
 	});
 
 	describe('empty', function () {
