@@ -156,7 +156,12 @@
   };
 
   xStore.prototype.empty = function () {
-    this.store.clear();
+    for (var i = this.store.length - 1; i >= 0; i--) {
+      var key = this.store.key(i);
+      if (key.indexOf(this.prefix) === 0) {
+        this.store.removeItem(key);
+      }
+    }
     return this;
   };
 
